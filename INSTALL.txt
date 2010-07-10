@@ -1,6 +1,14 @@
+Installation:
+
+If you checked out from github:
+
+python setup.py install
+
 Configuration:
 
-Define a SHRINK_THE_WEB dict in settings.py:
+1. Add 'stw' to your INSTALLED_APPS tuple.
+
+2. Define a SHRINK_THE_WEB dict in settings.py:
 
 SHRINK_THE_WEB = {
     'stwaccesskeyid' : 'your STW access key id' - required',
@@ -26,3 +34,18 @@ SHRINK_THE_WEB = {
 then this template tag shortens the delay to 5 sec and adds the stwinside parameter,
 the stwsize is taken from the defaults: 'xlrg':
 {% stwimage "http://example.com/internalpage.html" "The author website" "stwdelay=5 stwinside=1" %}
+
+Example Site:
+
+The template directory contains a sample template that demonstrates more uses.
+
+Make sure TEMPLATE_LOADERS contains:
+'django.template.loaders.app_directories.load_template_source'
+
+Add the template to your project's urls.py:
+urlpatterns = patterns('',
+                       (r'^stw/', include('stw.urls')),
+                       # the rest of your urls
+                       )
+
+Start django server and go to http://localhost:8000/stw/ to view the page

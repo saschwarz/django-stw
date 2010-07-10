@@ -6,7 +6,7 @@ setup(
     description='This application provides templatetags for simplying using Shrink The Web PagePix',
     author='Steve Schwarz',
     author_email='steve@agilitynerd.com',
-    url='https://code.launchpad.net/django-geotagging',
+    url='http://github.com/saschwarz/django-stw',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
