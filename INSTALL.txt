@@ -1,7 +1,12 @@
 Installation:
 
-If you checked out from github:
+Using easy_install:
+easy_install django-stw
 
+Using pip:
+pip install django-stw
+
+If you checked out from github:
 python setup.py install
 
 Configuration:
