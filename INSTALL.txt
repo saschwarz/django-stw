@@ -1,0 +1,28 @@
+Configuration:
+
+Define a SHRINK_THE_WEB dict in settings.py:
+
+SHRINK_THE_WEB = {
+    'stwaccesskeyid' : 'your STW access key id' - required',
+    'stwu' : 'your STW secret - only required by STW for PRO features',
+}
+
+where the dict keys match parameter names in the STW documentation:
+http://www.shrinktheweb.com/content/shrinktheweb-pagepix-documentation.html
+
+If you want to have the same settings for either tag on a site wide
+basis you can specify additional STW URL parameters and values
+in the settings.SHRINK_THE_WEB_DEFAULTS dictionary. Individual
+template tags can then override the default values.
+
+i.e.
+SHRINK_THE_WEB = {
+    'stwaccesskeyid' : 'your STW access key id' - required',
+    'stwu' : 'your STW secret - only required by STW for PRO features',
+    'stwdelay' : 10, # wait 10 sec for page to load before STW captures image
+    'stwsize' : 'xlrg', # default to xlrg image size
+}
+
+then this template tag shortens the delay to 5 sec and adds the stwinside parameter,
+the stwsize is taken from the defaults: 'xlrg':
+{% stwimage "http://example.com/internalpage.html" "The author website" "stwdelay=5 stwinside=1" %}

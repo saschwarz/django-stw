@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load shrinkthewebtags %}
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Programme
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100707
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>django-stw Django + Shrink The Web Examples</title>
+<style type="text/css">
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #0F162C;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #3C3D3F;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.7em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: underline;
+	color: #2E458A;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#wrapper {
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* Header */
+
+#header-wrapper {
+	height: 50px;
+	background: #0D1326;
+	border-top: 4px solid #3855A8;
+}
+
+#header {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 350px;
+	margin: 0;
+	padding: 0;
+	color: #000000;
+}
+
+#logo h1 {
+	font-size: 2.3em;
+}
+
+#logo h1, #logo h3 {
+	margin-left: 30px;
+	padding: 0px 0px 0px 0px;
+	letter-spacing: -1px;
+	text-transform: lowercase;
+	color: #FF3000;
+}
+
+#logo h1 a {
+	color: #FFFFFF;
+}
+
+#logo h1 span {
+}
+
+#logo p {
+	margin: 0;
+	padding: 0px 0 0 32px;
+	font: normal 14px Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+#logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Page */
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+	padding: 0px 0px 0px 0px;
+}
+
+#page-bgtop {
+	padding: 20px 0px;
+}
+/* Content */
+
+#content {
+	float: left;
+	width: 660px;
+	padding: 25px 30px 0px 30px;
+	background: #FFFFFF;
+}
+
+.post {
+	margin-bottom: 30px;
+	border-bottom: 1px solid #D1D9F0;
+}
+
+.post .title {
+	height: 41px;
+	padding: 0px 0px 0px 0px;
+	letter-spacing: -1px;
+}
+
+.post .title a {
+	text-decoration: none;
+	color: #293D75;
+	border: none;
+}
+
+.post .entry {
+	padding: 0px 30px 20px 30px;
+	padding-bottom: 20px;
+	text-align: justify;
+}
+
+.entry .caption {
+    margin-bottom: 5px;
+}
+
+.links a {
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 240px;
+	margin: 0px;
+	padding: 0px 20px 0px 0px;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar li ul {
+	margin: 0px 0px;
+	padding-bottom: 30px;
+}
+
+#sidebar li li {
+	line-height: 35px;
+	border-bottom: 1px solid #172244;
+	margin: 0px 20px 0px 20px;
+	border-left: none;
+	text-align: left;
+}
+
+#sidebar li li span {
+	display: block;
+	margin-top: -20px;
+	padding: 0;
+	font-size: 11px;
+	font-style: italic;
+}
+
+#sidebar li li a {
+	padding: 0px 0px 0px 15px;
+}
+
+#sidebar h2 {
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+	padding: 4px 0px 0px 20px;
+	text-shadow: #203060 -1px 1px 2px;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: -.5px;
+	font-size: 1em;
+	color: #FFFFFF;
+}
+
+#sidebar p {
+	margin: 0 0px;
+	padding: 0px 20px 20px 20px;
+	text-align: justify;
+	color: #8CA0D9;
+}
+
+#sidebar a {
+	border: none;
+	color: #8CA0D9;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+	color: #8CA0D9;
+}
+
+/* Footer */
+
+#footer {
+	height: 50px;
+	margin: 0 auto;
+	padding: 0px 0 15px 0;
+	background: #0D1326;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer p {
+	margin: 0;
+	padding-top: 20px;
+	line-height: normal;
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #3A58AE;
+}
+
+#footer a {
+	color: #3A58AE;
+}
+</style>
+</head>
+<body style="font-size:0.8em">
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header">
+      <div id="logo">
+	<h1><a href="#">django-stw</a></h1>
+	<h3>Django + Shrink The Web Examples</h3>
+      </div>
+    </div>
+  </div>
+  <!-- end #header -->
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="page-bgbtm">
+	<div id="content">
+	  <a id="shrinkthewebimage-examples"></a>
+	  <h1>shrinkthewebimage examples</h1>
+	  <div class="post">
+	    <h2 class="title"><a id="shrinkthewebimage-mcr">micro</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "mcr" "micro" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "mcr" "micro" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-tny">tiny</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "tny" "tiny" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "tny" "tiny" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-vsm">very small</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "vsm" "very small" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "vsm" "very small" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-sm">small</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "sm" "small" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "sm" "small" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-lg">large</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "lg" "large" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "lg" "large" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-xlg">extra large</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "xlg" "extra large" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "xlg" "extra large" %}</p>
+	    </div>
+	  </div>
+	  <a id="stwimage-examples"></a>
+	  <h1>stwimage simple api examples</h1>
+	  <div class="post">
+	    <h2 class="title"><a id="stwimage-mcr">micro</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "micro" stwsize=mcr {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "micro" stwsize=mcr %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-tny">tiny</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "tiny" stwsize=tny {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "tiny" stwsize=tny %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-vsm">very small</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "very small" stwsize=vsm {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "very small" stwsize=vsm %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-sm">small</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "small" stwsize=sm {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "small" stwsize=sm %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-lg">large</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "large" stwsize=lg {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "large" stwsize=lg %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-xlg">extra large</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "extra large" stwsize=xlg {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "extra large" stwsize=xlg %}</p>
+	    </div>
+	  </div>
+	  <a id="stwimage-pro-examples"></a>
+	  <h1>stwimage PRO api examples</h1>
+      <p>Requires 'stwu' in settings.SHRINK_THE_WEB and purchase of appropriate options from STW</p>
+      <div class="post">
+	    <h2 class="title"><a id="stwimage-inside">inside page</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/community/" "inside page" stwsize=lg stwinside=1 {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/community/" "inside page" stwsize=lg stwinside=1 %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-full">full length</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "full length" stwfull=1 {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "full length" stwfull=1 %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-full-width">full length 150px wide</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "full length 150 wide" stwfull=1 stwxmax=150 {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "full length 150 wide" stwfull=1 stwxmax=150 %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-full-width-height">full length 150px wide 50px tall</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "full length 150x50" stwfull=1 stwxmax=150 stwymax=50 {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "full length 150x50" stwfull=1 stwxmax=150 stwymax=50 %}</p>
+	    </div>
+	    <h2 class="title"><a id="stwimage-widescreen">widescreen 200px wide image</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "widescreen" stwnrx=1440 stwnry=900 stwxmax=200 {% templatetag closeblock %}</div>
+	      <p>{% stwimage "http://djangoproject.com/" "widescreen" stwnrx=1440 stwnry=900 stwxmax=200 %}</p>
+	    </div>
+      </div>
+	  <div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #content -->
+	<div id="sidebar">
+	  <ul>
+	    <li>
+	      <h2><a href="#shrinkthewebimage-examples">shrinkthewebimage examples</a></h2>
+	      <ul><li><a href="#shrinkthewebimage-mcr">micro</a></li>
+		    <li><a href="#shrinkthewebimage-tny">tiny</a></li>
+		    <li><a href="#shrinkthewebimage-vsm">very small</a></li>
+		    <li><a href="#shrinkthewebimage-sm">small</a></li>
+		    <li><a href="#shrinkthewebimage-lg">large</a></li>
+		    <li><a href="#shrinkthewebimage-xlg">extra large</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      <h2><a href="#stwimage-examples">stwimage simple api examples</a></h2>
+	      <ul>
+		    <li><a href="#stwimage-mcr">micro</a></li>
+		    <li><a href="#stwimage-tny">tiny</a></li>
+		    <li><a href="#stwimage-vsm">very small</a></li>
+		    <li><a href="#stwimage-sm">small</a></li>
+		    <li><a href="#stwimage-lg">large</a></li>
+		    <li><a href="#stwimage-xlg">extra large</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      <h2><a href="#stwimage-pro-examples">stwimage PRO api examples</a></h2>
+	      <ul>
+            <li><a href="#stwimage-inside">inside page</a></li>
+		    <li><a href="#stwimage-full">full length</a></li>
+		    <li><a href="#stwimage-full-width">full length 150px wide</a></li>
+		    <li><a href="#stwimage-full-width-height">full length 150px wide 50px tall</a></li>
+		    <li><a href="#stwimage-widescreen">widescreen 200px wide</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+	<!-- end #sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+  <p>Design based on design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>
