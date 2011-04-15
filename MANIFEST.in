@@ -1,4 +1,5 @@
 include AUTHORS.txt
+include CHANGELOG.txt
 include INSTALL.txt
 include LICENSE.txt
 include README.txt

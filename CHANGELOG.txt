@@ -1,0 +1,5 @@
+0.0.2 Modifications for preview feature of STW
+- shrinkthewebimage template tag is used for free features. Adds required preview feature.
+- stwimage can now only be used for PRO features.
+
+0.0.1 Initial release
