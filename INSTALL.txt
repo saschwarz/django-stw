@@ -51,10 +51,10 @@ The template directory contains a sample template that demonstrates more uses.
 
 Make sure TEMPLATE_LOADERS contains the app_directories template loader:
 
-Django 1.2:
+Django 1.2, 1.3:
 'django.template.loaders.app_directories.Loader'
 
-Prior releases:
+Prior Django releases:
 'django.template.loaders.app_directories.load_template_source'
 
 Add the template to your project's urls.py:
@@ -64,3 +64,8 @@ urlpatterns = patterns('',
                        )
 
 Start django server and visit http://localhost:8000/stw/ in your browser to view the page.
+
+Tests:
+
+The tests require the mock package (http://www.voidspace.org.uk/python/mock/mock.html).
+They can be run without setting up a Django project using the runtests.py script.
