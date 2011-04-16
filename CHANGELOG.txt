@@ -1,5 +1,17 @@
-0.0.2 Modifications for preview feature of STW
-- shrinkthewebimage template tag is used for free features. Adds required preview feature.
+0.2.0 Modifications for preview feature of STW
+
+- shrinkthewebimage template tag is NOT backward compatible with version 0.0.1.
+The alt argument is no longer accepted.
+- shrinkthewebimage template tag is now designed for use by free accounts, it
+adds the required preview feature. It can also be used by PRO accounts wanting
+the preview functionality. The tag now accepts key-value arguments in the same
+manner as the stwimage tag.
 - stwimage can now only be used for PRO features.
+- template tags now throw exceptions in their constructors instead of in the render
+function so configuration errors are visible during development.
+- django-stw defines a key 'lang' for the SHRINK_THE_WEB dictionary that
+can be passed along as a default to the preview tag. Alternately a 'lang'
+keyword can be supplied in each template tag invocation. django-stw defaults it
+to 'en'.
 
 0.0.1 Initial release

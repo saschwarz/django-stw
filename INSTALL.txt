@@ -23,6 +23,11 @@ SHRINK_THE_WEB = {
 where the dict keys match parameter names in the STW documentation:
 http://www.shrinktheweb.com/content/shrinktheweb-pagepix-documentation.html
 
+django-stw defines a key 'lang' for the SHRINK_THE_WEB dictionary that
+can be passed along as a default to the preview tag. Alternately a 'lang'
+keyword can be supplied in each template tag invocation. STW defaults it
+to 'en'.
+
 If you want to have the same settings for either tag on a site wide
 basis you can specify additional STW URL parameters and values
 in the settings.SHRINK_THE_WEB_DEFAULTS dictionary. Individual
@@ -44,7 +49,12 @@ Example Site:
 
 The template directory contains a sample template that demonstrates more uses.
 
-Make sure TEMPLATE_LOADERS contains:
+Make sure TEMPLATE_LOADERS contains the app_directories template loader:
+
+Django 1.2:
+'django.template.loaders.app_directories.Loader'
+
+Prior releases:
 'django.template.loaders.app_directories.load_template_source'
 
 Add the template to your project's urls.py:
@@ -53,4 +63,4 @@ urlpatterns = patterns('',
                        # the rest of your urls
                        )
 
-Start django server and go to http://localhost:8000/stw/ to view the page
+Start django server and visit http://localhost:8000/stw/ in your browser to view the page.

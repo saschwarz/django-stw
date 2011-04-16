@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-{% load shrinkthewebtags %}
+{% load shrinkthewebtags %} {% comment %} only required for stwimage template tag {% endcomment %}
 <!--
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -17,6 +17,7 @@ Released   : 20100707
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>django-stw Django + Shrink The Web Examples</title>
+{% stwjavascript %}
 <style type="text/css">
 /*
 Design by Free CSS Templates
@@ -297,40 +298,47 @@ a:hover {
 	<div id="content">
 	  <a id="shrinkthewebimage-examples"></a>
 	  <h1>shrinkthewebimage examples</h1>
+	  <p>When the image is clicked this template tag directs the user to a site verification page prior to visiting the specified website. This is the template tag STW requires be used by free accounts. It can also be used by PRO accounts if the redirect page is desired.</p>
 	  <div class="post">
 	    <h2 class="title"><a id="shrinkthewebimage-mcr">micro</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "mcr" "micro" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "mcr" "micro" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "mcr" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "mcr" %}</p>
 	    </div>
 	    <h2 class="title"><a id="shrinkthewebimage-tny">tiny</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "tny" "tiny" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "tny" "tiny" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "tny" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "tny" %}</p>
 	    </div>
 	    <h2 class="title"><a id="shrinkthewebimage-vsm">very small</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "vsm" "very small" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "vsm" "very small" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "vsm" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "vsm" %}</p>
 	    </div>
 	    <h2 class="title"><a id="shrinkthewebimage-sm">small</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "sm" "small" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "sm" "small" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "sm" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "sm" %}</p>
 	    </div>
 	    <h2 class="title"><a id="shrinkthewebimage-lg">large</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "lg" "large" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "lg" "large" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "lg" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "lg" %}</p>
 	    </div>
 	    <h2 class="title"><a id="shrinkthewebimage-xlg">extra large</a></h2>
 	    <div class="entry">
-	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "xlg" "extra large" {% templatetag closeblock %}</div>
-	      <p>{% shrinkthewebimage "http://djangoproject.com/" "xlg" "extra large" %}</p>
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "xlg" {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "xlg" %}</p>
+	    </div>
+	    <h2 class="title"><a id="shrinkthewebimage-xlg-fr">extra large lang=fr</a></h2>
+	    <div class="entry">
+	      <div class="caption">{% templatetag openblock %} shrinkthewebimage "http://djangoproject.com/" "xlg" lang=fr {% templatetag closeblock %}</div>
+	      <p>{% shrinkthewebimage "http://djangoproject.com/" "xlg" lang=fr %}</p>
 	    </div>
 	  </div>
-	  <a id="stwimage-examples"></a>
-	  <h1>stwimage simple api examples</h1>
+	  <a id="stwimage-pro-examples"></a>
+	  <h1>stwimage PRO api examples</h1>
+	  <p>Requires 'stwu' in settings.SHRINK_THE_WEB and purchase of appropriate options from <a href="http://www.shrinktheweb.com?a=988">Shrink The Web</a></p>
 	  <div class="post">
 	    <h2 class="title"><a id="stwimage-mcr">micro</a></h2>
 	    <div class="entry">
@@ -362,11 +370,6 @@ a:hover {
 	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/" "extra large" stwsize=xlg {% templatetag closeblock %}</div>
 	      <p>{% stwimage "http://djangoproject.com/" "extra large" stwsize=xlg %}</p>
 	    </div>
-	  </div>
-	  <a id="stwimage-pro-examples"></a>
-	  <h1>stwimage PRO api examples</h1>
-      <p>Requires 'stwu' in settings.SHRINK_THE_WEB and purchase of appropriate options from <a href="http://www.shrinktheweb.com?a=988">Shrink The Web</a></p>
-      <div class="post">
 	    <h2 class="title"><a id="stwimage-inside">inside page</a></h2>
 	    <div class="entry">
 	      <div class="caption">{% templatetag openblock %} stwimage "http://djangoproject.com/community/" "inside page" stwsize=lg stwinside=1 {% templatetag closeblock %}</div>
@@ -410,10 +413,11 @@ a:hover {
 		    <li><a href="#shrinkthewebimage-sm">small</a></li>
 		    <li><a href="#shrinkthewebimage-lg">large</a></li>
 		    <li><a href="#shrinkthewebimage-xlg">extra large</a></li>
+		    <li><a href="#shrinkthewebimage-xlg-fr">extra large lang=fr</a></li>
 	      </ul>
 	    </li>
 	    <li>
-	      <h2><a href="#stwimage-examples">stwimage simple api examples</a></h2>
+	      <h2><a href="#stwimage-pro-examples">stwimage PRO api examples</a></h2>
 	      <ul>
 		    <li><a href="#stwimage-mcr">micro</a></li>
 		    <li><a href="#stwimage-tny">tiny</a></li>
@@ -421,12 +425,7 @@ a:hover {
 		    <li><a href="#stwimage-sm">small</a></li>
 		    <li><a href="#stwimage-lg">large</a></li>
 		    <li><a href="#stwimage-xlg">extra large</a></li>
-	      </ul>
-	    </li>
-	    <li>
-	      <h2><a href="#stwimage-pro-examples">stwimage PRO api examples</a></h2>
-	      <ul>
-            <li><a href="#stwimage-inside">inside page</a></li>
+		    <li><a href="#stwimage-inside">inside page</a></li>
 		    <li><a href="#stwimage-full">full length</a></li>
 		    <li><a href="#stwimage-full-width">full length 150px wide</a></li>
 		    <li><a href="#stwimage-full-width-height">full length 150px wide 50px tall</a></li>
