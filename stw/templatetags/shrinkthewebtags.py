@@ -8,7 +8,6 @@ can use this tag to access the preview feature.
  - stwimage - the non-preview templatetag that supports all PRO features.
 """
 import urllib
-from django.utils import simplejson
 from django.conf import settings
 from django import template
 
@@ -42,19 +41,23 @@ class FormatSTWFreeImageNode(template.Node):
             var = template.Variable(var).resolve(context)
         return var
 
-    def _create_json_options(self, options):
+    def _create_urlencoded_options(self, options):
         """Create JSON dictionary of option excluding 'stwaccesskeyid', 'stwlang' and 'stwsize'"""
         ret = {}
         for k,v in options.items():
             if k not in ('stwaccesskeyid', 'stwsize', 'lang'):
                 ret[k] = v
-        return ret and simplejson.dumps(ret) or 'undefined'
+        return ret and urllib.urlencode(ret) or None
 
     def render(self, context):
-        url = self._resolve(self.url, context)
-        lang = self.kwargs.get('lang', 'en')
-        options = self._create_json_options(self.kwargs)
-        return """<script type="text/javascript">stw_pagepix('%s', '%s', '%s', '%s', %s);</script>""" % (url, self.kwargs['stwaccesskeyid'], self.kwargs['stwsize'], lang, options)
+        args = [self._resolve(self.url, context),
+                self.kwargs['stwaccesskeyid'],
+                self.kwargs['stwsize'],
+                self.kwargs.get('lang', 'en')]
+        options = self._create_urlencoded_options(self.kwargs)
+        if options:
+            args.append(options)
+        return """<script type="text/javascript">stw_pagepix(%s);</script>""" % ",".join(["\'%s\'" % arg for arg in args])
 
 
 class FormatSTWImageNode(FormatSTWFreeImageNode):

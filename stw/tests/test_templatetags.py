@@ -26,7 +26,7 @@ class TestFormatSTWFreeImageNode(unittest.TestCase):
             return 'url'
         node._resolve = Mock(side_effect=side_effect)
 
-        self.assertEqual("""<script type="text/javascript">stw_pagepix('url', 'key', 'sm', 'en', undefined);</script>""", node.render(None))
+        self.assertEqual("""<script type="text/javascript">stw_pagepix('url','key','sm','en');</script>""", node.render(None))
 
     def test_render_strings_url_lang_default(self):
         settings.SHRINK_THE_WEB = {'stwaccesskeyid': 'key',
@@ -36,7 +36,7 @@ class TestFormatSTWFreeImageNode(unittest.TestCase):
             return 'url'
         node._resolve = Mock(side_effect=side_effect)
 
-        self.assertEqual("""<script type="text/javascript">stw_pagepix('url', 'key', 'sm', 'fr', undefined);</script>""", node.render(None))
+        self.assertEqual("""<script type="text/javascript">stw_pagepix('url','key','sm','fr');</script>""", node.render(None))
 
 
     def test_render_strings_url_lang_local(self):
@@ -47,14 +47,21 @@ class TestFormatSTWFreeImageNode(unittest.TestCase):
             return 'url'
         node._resolve = Mock(side_effect=side_effect)
 
-        self.assertEqual("""<script type="text/javascript">stw_pagepix('url', 'key', 'sm', 'de', undefined);</script>""", node.render(None))
+        self.assertEqual("""<script type="text/javascript">stw_pagepix('url','key','sm','de');</script>""", node.render(None))
 
-    def test_render_strings_url_extra_args(self):
+    def test_render_strings_url_one_option(self):
         node = FormatSTWFreeImageNode("'url'", stwsize='lrg', stwfull=1)
         def side_effect(*args, **kwargs):
             return 'url'
         node._resolve = Mock(side_effect=side_effect)
-        self.assertEqual("""<script type="text/javascript">stw_pagepix('url', 'key', 'lrg', 'en', {"stwfull": 1});</script>""", node.render(None))
+        self.assertEqual("""<script type="text/javascript">stw_pagepix('url','key','lrg','en','stwfull=1');</script>""", node.render(None))
+
+    def test_render_strings_url_two_options(self):
+        node = FormatSTWFreeImageNode("'url'", stwsize='lrg', stwfull=1, stwsomearg='abcde')
+        def side_effect(*args, **kwargs):
+            return 'url'
+        node._resolve = Mock(side_effect=side_effect)
+        self.assertEqual("""<script type="text/javascript">stw_pagepix('url','key','lrg','en','stwfull=1&stwsomearg=abcde');</script>""", node.render(None))
 
 
 class TestSTWImageNode(unittest.TestCase):
