@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-{% load shrinkthewebtags %} {% comment %} only required for stwimage template tag {% endcomment %}
+{% load shrinkthewebtags %}
 <!--
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -17,7 +17,6 @@ Released   : 20100707
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>django-stw Django + Shrink The Web Examples</title>
-{% stwjavascript %}
 <style type="text/css">
 /*
 Design by Free CSS Templates
@@ -280,6 +279,7 @@ a:hover {
 	color: #3A58AE;
 }
 </style>
+{% stwjavascript %}{% comment %} only required for stwimage template tag {% endcomment %}
 </head>
 <body style="font-size:0.8em">
 <div id="wrapper">
