@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-stw',
-    version='0.2.0',
+    version='0.3.0',
     description='This application provides templatetags for simplying using Shrink The Web PagePix',
     author='Steve Schwarz',
     author_email='steve@agilitynerd.com',

@@ -1,5 +1,4 @@
-
-Copyright (c) 2009-2010 Steve Schwarz
+Copyright (c) 2009-2013 Steve Schwarz
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

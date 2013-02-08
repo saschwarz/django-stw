@@ -17,7 +17,6 @@ Configuration:
 
 SHRINK_THE_WEB = {
     'stwaccesskeyid' : 'your STW access key id' - required',
-    'stwu' : 'your STW secret - only required by STW for PRO features',
 }
 
 where the dict keys match parameter names in the STW documentation:
@@ -36,7 +35,6 @@ template tags can then override the default values.
 i.e.
 SHRINK_THE_WEB = {
     'stwaccesskeyid' : 'your STW access key id' - required',
-    'stwu' : 'your STW secret - only required by STW for PRO features',
     'stwdelay' : 10, # wait 10 sec for page to load before STW captures image
     'stwsize' : 'xlrg', # default to xlrg image size
 }

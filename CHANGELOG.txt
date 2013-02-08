@@ -1,3 +1,5 @@
+0.3.0 2013-Feb-08 Removed stwu (secret key) from docs/examples. 
+                  Never provide this parameter to STW.
 0.2.0 2011-Apr-22 Modifications for preview feature of STW
 
 Changes to the shrinkthewebimage template tag:
