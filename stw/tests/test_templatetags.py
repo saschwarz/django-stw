@@ -75,21 +75,21 @@ class TestSTWImageNode(unittest.TestCase):
 
     def test_init(self):
         node = FormatSTWImageNode("url", "alt", stwsize='lrg')
-        self.assertEqual("url", "%s" % node.url)
+        self.assertEqual("url", "{0!s}".format(node.url))
         self.assertEqual("alt", node.alt)
         # get value from settings.SHRINK_THE_WEB
         self.assertEqual('key', node.kwargs['stwaccesskeyid'])
 
     def test_init_override_key(self):
         node = FormatSTWImageNode("url", "alt", stwaccesskeyid='overridekey', stwsize='lrg')
-        self.assertEqual("url", "%s" % node.url)
+        self.assertEqual("url", "{0!s}".format(node.url))
         self.assertEqual("alt", node.alt)
         self.assertEqual('overridekey', node.kwargs['stwaccesskeyid'])
 
     def test_init_add_from_settings_and_override_key(self):
         settings.SHRINK_THE_WEB = {'stwaccesskeyid' : 'key', 'stwanewkey': 'newkey'}
         node = FormatSTWImageNode("url", "alt", stwaccesskeyid='overridekey', stwsize='lrg')
-        self.assertEqual("url", "%s" % node.url)
+        self.assertEqual("url", "{0!s}".format(node.url))
         self.assertEqual("alt", node.alt)
         self.assertEqual('overridekey', node.kwargs['stwaccesskeyid'])
         self.assertEqual('newkey', node.kwargs['stwanewkey'])
