@@ -7,9 +7,10 @@ the STW preview feature. STW requires free accounts to use this tag. PRO account
 can use this tag to access the preview feature.
  - stwimage - the non-preview templatetag that supports all PRO features.
 """
-import urllib
+from six.moves.urllib import parse
 from django.conf import settings
 from django import template
+
 
 class STWConfigError(template.TemplateSyntaxError):
     pass
@@ -47,7 +48,7 @@ class FormatSTWFreeImageNode(template.Node):
         for k,v in options.items():
             if k not in ('stwaccesskeyid', 'stwsize', 'lang'):
                 ret[k] = v
-        return ret and urllib.urlencode(ret) or None
+        return ret and parse.urlencode(ret) or None
 
     def render(self, context):
         args = [self._resolve(self.url, context),
@@ -81,7 +82,7 @@ class FormatSTWImageNode(FormatSTWFreeImageNode):
     def render(self, context):
         url = self._resolve(self.url, context)
         alt = self._resolve(self.alt, context)
-        encoded = urllib.urlencode(self.kwargs)
+        encoded = parse.urlencode(self.kwargs)
         if encoded:
             encoded += '&'
         result =  '''<img src="http://images.shrinktheweb.com/xino.php?%sstwurl=%s" alt="%s"/>''' % (encoded, url, alt)
@@ -132,14 +133,13 @@ def do_shrinkthewebimage(parser, token):
         raise template.TemplateSyntaxError("'%s' tag takes 3 or more arguments" % bits[0])
     size = bits[2]
     if size[0] == size[-1] and size[0] in ('"', "'"):
-        size = size[1:-1] # a string
+        size = size[1:-1]  # a string
 
-    kwargs = {'stwsize' : size,
+    kwargs = {'stwsize': size,
               }
     for key_equal_value in bits[3:]:
         key, value = key_equal_value.split("=")
         kwargs[str(key.strip())] = value.strip()
-
     return FormatSTWFreeImageNode(url=bits[1], **kwargs)
 
 
@@ -193,12 +193,6 @@ def do_stwimage(parser, token):
     return FormatSTWImageNode(url=bits[1], alt=bits[2] , **kwargs)
 
 
-def stwjavascript():
-    """Insert script tag to load the javascript required by Shrink The Web's API"""
-    return """<script type="text/javascript" src="http://www.shrinktheweb.com/scripts/pagepix.js"></script>"""
-
-
 register = template.Library()
 register.tag('shrinkthewebimage', do_shrinkthewebimage)
 register.tag('stwimage', do_stwimage)
-register.simple_tag(stwjavascript)

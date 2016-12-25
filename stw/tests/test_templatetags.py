@@ -10,6 +10,7 @@ from stw.templatetags.shrinkthewebtags import (FormatSTWFreeImageNode,
                                                STWConfigError,
                                                stwjavascript)
 
+
 class TestFormatSTWFreeImageNode(unittest.TestCase):
 
     def setUp(self):
@@ -177,7 +178,7 @@ class TestSTWImageNode(unittest.TestCase):
         context = {'alt': 'contextalt'}
         self.assertEqual('''<img src="http://images.shrinktheweb.com/xino.php?stwaccesskeyid=key&stwsize=lrg&stwembed=1&stwurl=url" alt="alt"/>''', node.render(context))
 
-    @patch('urllib.urlencode')
+    @patch('six.moves.urllib.parse.urlencode')
     def test_render_strings_url_alt_kwargs(self, mockurlencode):
         node = FormatSTWImageNode("'url'", "'alt'", stwsize='lrg')
         results = ["alt", "url"]
