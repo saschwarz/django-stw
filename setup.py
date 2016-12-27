@@ -7,6 +7,7 @@ setup(
     author='Steve Schwarz',
     author_email='steve@agilitynerd.com',
     url='http://github.com/saschwarz/django-stw',
+    download_url='https://github.com/saschwarz/django-stw/tarball/1.0.0',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 1 - Production',
@@ -17,6 +18,7 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
+    keywords=['Django', 'images', 'templatetag'],
     include_package_data=True,
     zip_safe=False,
     install_requires=['setuptools', 'six'],
