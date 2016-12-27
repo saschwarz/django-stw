@@ -1,4 +1,10 @@
-0.3.0 2013-Feb-08 Removed stwu (secret key) from docs/examples. 
+1.0.0 2016-Dec-27 Updates for Django 1.9/1.10 and Python 2.7/3.5
+
+- Old versions of Django/Python are no longer supported.
+- Removed shrinkthewebimage template tag since there is no longer and
+API distinction between free and Pro accounts.
+
+0.3.0 2013-Feb-08 Removed stwu (secret key) from docs/examples.
                   Never provide this parameter to STW.
 0.2.0 2011-Apr-22 Modifications for preview feature of STW
 

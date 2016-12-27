@@ -1,8 +1,5 @@
 Installation:
 
-Using easy_install:
-easy_install django-stw
-
 Using pip:
 pip install django-stw
 
@@ -13,14 +10,14 @@ Configuration:
 
 1. Add 'stw' to your INSTALLED_APPS tuple.
 
-2. Define a SHRINK_THE_WEB dict in settings.py:
+2. Define a SHRINK_THE_WEB dict in settings.py minimally containing:
 
 SHRINK_THE_WEB = {
     'stwaccesskeyid' : 'your STW access key id' - required',
 }
 
 where the dict keys match parameter names in the STW documentation:
-http://www.shrinktheweb.com/content/shrinktheweb-pagepix-documentation.html
+https://shrinktheweb.com/uploads/PRO_Feature_Documentation.pdf
 
 django-stw defines a key 'lang' for the SHRINK_THE_WEB dictionary that
 can be passed along as a default to the preview tag. Alternately a 'lang'
@@ -47,23 +44,15 @@ Example Site:
 
 The template directory contains a sample template that demonstrates more uses.
 
-Make sure TEMPLATE_LOADERS contains the app_directories template loader:
-
-Django 1.2, 1.3:
-'django.template.loaders.app_directories.Loader'
-
-Prior Django releases:
-'django.template.loaders.app_directories.load_template_source'
-
 Add the template to your project's urls.py:
-urlpatterns = patterns('',
-                       (r'^stw/', include('stw.urls')),
-                       # the rest of your urls
-                       )
+urlpatterns = [url(r'^stw/', include('stw.urls')),
+               # the rest of your urls
+]
 
 Start django server and visit http://localhost:8000/stw/ in your browser to view the page.
 
 Tests:
 
-The tests require the mock package (http://www.voidspace.org.uk/python/mock/mock.html).
-They can be run without setting up a Django project using the runtests.py script.
+The tests require the mock package (http://www.voidspace.org.uk/python/mock/mock.html):
+pip install -r requirements-test.txt
+They can be run without setting up a Django project via: python runtests.py
