@@ -100,27 +100,6 @@ class TestSTWImageNode(unittest.TestCase):
                           FormatSTWImageNode,
                           'url', 'alt', stwsize='lrg')
 
-    # invalid combinations of stwsize, stwxmax, stwymax and stwfull
-    def test_init_no_stwsize_no_stwxmax_no_stwymax(self):
-        self.assertRaises(template.TemplateSyntaxError, FormatSTWImageNode,
-                          'url', 'alt', stwaccesskeyid='key')
-
-    def test_init_stwsize_stwfull(self):
-        self.assertRaises(template.TemplateSyntaxError, FormatSTWImageNode,
-                          'url', 'alt', **{'stwaccesskeyid': 'key', 'stwsize': 'lrg', 'stwfull': 1})
-
-    def test_init_stwsize_stwxmax(self):
-        self.assertRaises(template.TemplateSyntaxError, FormatSTWImageNode,
-                          'url', 'alt', **{'stwaccesskeyid': 'key', 'stwsize': 'lrg', 'stwxmax': 100})
-
-    def test_init_stwsize_stwymax(self):
-        self.assertRaises(template.TemplateSyntaxError, FormatSTWImageNode,
-                          'url', 'alt', **{'stwaccesskeyid': 'key', 'stwsize': 'lrg', 'stwymax': 100})
-
-    def test_init_stwsize_stwxmax_stwymax(self):
-        self.assertRaises(template.TemplateSyntaxError, FormatSTWImageNode,
-                          'url', 'alt', **{'stwaccesskeyid': 'key', 'stwsize': 'lrg', 'stwymax': 100, 'stwxmax': 100})
-
     def test_render_context(self):
         node = FormatSTWImageNode("url", "alt", stwsize='lrg')
         results = ["alt", "url"]

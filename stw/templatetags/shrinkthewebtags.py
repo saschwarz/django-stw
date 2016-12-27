@@ -43,12 +43,6 @@ class FormatSTWImageNode(template.Node):
     def _validate(self):
         if 'stwaccesskeyid' not in self.kwargs:
             raise STWConfigError("'stwaccesskeyid' must be defined in settings.SHRINK_THE_WEB")
-        # validate conflicting options
-        # if 'stwsize' in self.kwargs:
-        #     if 'stwxmax' in self.kwargs or 'stwymax' in self.kwargs or 'stwfull' in self.kwargs:
-        #         raise template.TemplateSyntaxError("'stwimage' tag does not allow 'stwsize' together with ('stwfull' or ('stwxmax' and/or 'stwymax')) keyword(s)")
-        # elif 'stwxmax' not in self.kwargs and 'stwymax' not in self.kwargs and 'stwfull' not in self.kwargs:
-        #     raise template.TemplateSyntaxError("'stwimage' tag requires 'stwsize' or ('stwfull' or ('stwxmax' and/or 'stwymax')) keyword(s)")
 
     def render(self, context):
         url = self._resolve(self.url, context)
@@ -56,7 +50,7 @@ class FormatSTWImageNode(template.Node):
         encoded = parse.urlencode(self.kwargs)
         if encoded:
             encoded += '&'
-        result =  '''<img src="http://images.shrinktheweb.com/xino.php?%sstwurl=%s" alt="%s"/>''' % (encoded, url, alt)
+        result =  '''<img src="http://images.shrinktheweb.com/xino.php?{0}stwurl={1}" alt="{2}"/>'''.format(encoded, url, alt)
         return result
 
 
@@ -94,19 +88,19 @@ def do_stwimage(parser, token):
     """
     bits = token.split_contents()
     if len(bits) < 3:
-        raise template.TemplateSyntaxError("'%s' tag takes at least 2 arguments" % bits[0])
+        raise template.TemplateSyntaxError("'{}' tag takes at least 2 arguments".format(bits[0]))
 
     # process keyword args
     kwargs = {}
     for bit in bits[3:]:
         key, value = bit.split("=")
         if value is '':
-            raise template.TemplateSyntaxError("'%s' tag keyword: %s has no argument" % (bits[0], key))
+            raise template.TemplateSyntaxError("'{0}' tag keyword: {1} has no argument".format(bits[0], key))
 
         if key.startswith('stw'):
             kwargs[str(key)] = value
         else:
-            raise template.TemplateSyntaxError("'%s' tag keyword: %s is not a valid STW keyword" % (bits[0], key))
+            raise template.TemplateSyntaxError("'{0}' tag keyword: {1} is not a valid STW keyword".format(bits[0], key))
     return FormatSTWImageNode(url=bits[1], alt=bits[2] , **kwargs)
 
 
