@@ -1,3 +1,7 @@
+1.0.1 2016-Dec-28 Use https for all requests to shrinktheweb.com
+Stops browser warnings when used on https websites while not interferring with
+sites running on http.
+
 1.0.0 2016-Dec-27 Updates for Django 1.9/1.10 and Python 2.7/3.5
 
 - Old versions of Django/Python are no longer supported.
