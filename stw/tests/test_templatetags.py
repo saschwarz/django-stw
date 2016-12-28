@@ -110,7 +110,7 @@ class TestSTWImageNode(unittest.TestCase):
 
         context = {'alt': 'contextalt'}
         self.assertEqual(
-            '''<img src="http://images.shrinktheweb.com/xino.php?stwaccesskeyid=key&stwembed=1&stwsize=lrg&stwurl=url" alt="alt"/>''',
+            '''<img src="https://images.shrinktheweb.com/xino.php?stwaccesskeyid=key&stwembed=1&stwsize=lrg&stwurl=url" alt="alt"/>''',
             node.render(context))
 
     @patch('six.moves.urllib.parse.urlencode')
@@ -123,7 +123,7 @@ class TestSTWImageNode(unittest.TestCase):
         node._resolve = Mock(side_effect=side_effect)
         mockurlencode.return_value = "kwarg=kwargvalue"
         self.assertEqual(
-            '''<img src="http://images.shrinktheweb.com/xino.php?kwarg=kwargvalue&stwurl=url" alt="alt"/>''', node.render(None))
+            '''<img src="https://images.shrinktheweb.com/xino.php?kwarg=kwargvalue&stwurl=url" alt="alt"/>''', node.render(None))
 
 
 class TestDoSTWImage(unittest.TestCase):

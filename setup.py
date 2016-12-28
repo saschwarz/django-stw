@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-stw',
-    version='1.0.0',
+    version='1.0.1',
     description='This application provides templatetags for simplying using Shrink The Web PagePix',
     author='Steve Schwarz',
     author_email='steve@agilitynerd.com',
-    url='http://github.com/saschwarz/django-stw',
+    url='https://github.com/saschwarz/django-stw',
     download_url='https://github.com/saschwarz/django-stw/tarball/1.0.0',
     packages=find_packages(),
     classifiers=[

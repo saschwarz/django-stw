@@ -1,4 +1,4 @@
-Django application for inserting Shrink The Web (http://www.shrinktheweb.com/) images into templates.
+Django application for inserting Shrink The Web (https://www.shrinktheweb.com/) images into templates.
 
 Contains a templatetag providing a thin wrapper around the STW api:
 https://shrinktheweb.com/uploads/STW_API_Documentation.pdf

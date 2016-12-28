@@ -50,7 +50,7 @@ class FormatSTWImageNode(template.Node):
         encoded = parse.urlencode(self.kwargs)
         if encoded:
             encoded += '&'
-        result =  '''<img src="http://images.shrinktheweb.com/xino.php?{0}stwurl={1}" alt="{2}"/>'''.format(encoded, url, alt)
+        result =  '''<img src="https://images.shrinktheweb.com/xino.php?{0}stwurl={1}" alt="{2}"/>'''.format(encoded, url, alt)
         return result
 
 
