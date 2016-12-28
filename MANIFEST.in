@@ -2,5 +2,5 @@ include AUTHORS.txt
 include CHANGELOG.txt
 include INSTALL.txt
 include LICENSE.txt
-include README.txt
+include README.md
 recursive-include stw *.html
