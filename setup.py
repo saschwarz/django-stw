@@ -7,7 +7,7 @@ setup(
     author='Steve Schwarz',
     author_email='steve@agilitynerd.com',
     url='https://github.com/saschwarz/django-stw',
-    download_url='https://github.com/saschwarz/django-stw/tarball/1.0.0',
+    download_url='https://github.com/saschwarz/django-stw/tarball/1.0.1',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
